@@ -40,7 +40,7 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
@@ -80,18 +80,43 @@
       margin: 0 auto;
     }
 
+    .rituals-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .ritual-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ritual-button {
+      background-color: #5e4b73;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      white-space: nowrap;
+    }
+
+    .ritual-button:hover {
+      background-color: #7b63a1;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
       background-color: #1f1b24;
       font-size: 0.9rem;
       color: #c5b3da;
-    }
-
-    @media (min-width: 1100px) {
-      .offering-grid {
-        flex-wrap: nowrap;
-      }
     }
   </style>
 </head>
@@ -110,31 +135,36 @@
   <div class="container">
     <section id="rituals">
       <h2 class="section-title">Rituals</h2>
-      <div class="offering-grid">
-        <div class="offering">
-          <a href="love.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/love.jpg" alt="Love Ritual" />
-          </a>
+      <div class="rituals-header">
+        <div class="offering-grid">
+          <div class="offering">
+            <a href="love.html">
+              <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/love.jpg" alt="Love Ritual" />
+            </a>
+          </div>
+          <div class="offering">
+            <a href="protection.html">
+              <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/protection.jpg" alt="Protection Ritual" />
+            </a>
+          </div>
+          <div class="offering">
+            <a href="cutthecord.html">
+              <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/cordcutting.jpg" alt="Cut the Cord Ritual" />
+            </a>
+          </div>
+          <div class="offering">
+            <a href="abundance.html">
+              <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/abundance.jpg" alt="Abundance Ritual" />
+            </a>
+          </div>
+          <div class="offering">
+            <a href="blockages.html">
+              <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/blockage.png" alt="Blockages Ritual" />
+            </a>
+          </div>
         </div>
-        <div class="offering">
-          <a href="protection.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/protection.jpg" alt="Protection Ritual" />
-          </a>
-        </div>
-        <div class="offering">
-          <a href="cutthecord.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/cordcutting.jpg" alt="Cut the Cord Ritual" />
-          </a>
-        </div>
-        <div class="offering">
-          <a href="abundance.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/abundance.jpg" alt="Abundance Ritual" />
-          </a>
-        </div>
-        <div class="offering">
-          <a href="blockages.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/blockage.jpg" alt="Blockages Ritual" />
-          </a>
+        <div class="ritual-button-container">
+          <a href="rituals.html" class="ritual-button">View All Rituals</a>
         </div>
       </div>
     </section>
