@@ -10,7 +10,7 @@
       margin: 0;
       font-family: 'Raleway', sans-serif;
       background-color: #121212;
-      color: #e8e6e3;
+      color: #b3d9ff; /* light baby blue font */
     }
 
     header {
@@ -23,7 +23,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.8rem;
       margin: 0;
-      color: #e1d7c6;
+      color: #ffd700; /* gold title */
     }
 
     nav {
@@ -34,21 +34,21 @@
 
     nav a {
       margin: 0 1rem;
-      color: #d9b4ff;
+      color: #ffd700; /* gold nav links */
       text-decoration: none;
       font-weight: 600;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .section-header {
+    .section-heading {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 1rem;
     }
 
@@ -56,48 +56,49 @@
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin: 0;
-      color: #f2ebff;
-      border-bottom: 2px solid #5e4b73;
+      color: #b3d9ff;
+      border-bottom: 2px solid #ffd700; /* gold underline */
       padding-bottom: 0.3rem;
       flex-grow: 1;
     }
 
-    .view-all-button {
-      background-color: #121c33;
-      color: #ffd700;
-      padding: 0.5rem 1rem;
-      border: 1px solid #ffd700;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
+    .view-all {
       margin-left: 1rem;
-      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffd700;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: transform 0.3s ease;
     }
 
-    .view-all-button:hover {
+    .view-all:hover {
       transform: translateX(5px);
-      background-color: #1a243d;
     }
 
-    .offering-row {
+    .offering-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.5rem;
       justify-content: center;
-      margin-top: 1.5rem;
     }
 
     .offering {
       background-color: #1a161f;
       border-radius: 12px;
       padding: 0.5rem;
-      width: 180px;
+      width: 200px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
     }
 
     .offering img {
-      width: 100%;
+      width: 90%;
+      max-width: 200px;
       height: auto;
       border-radius: 10px;
       display: block;
@@ -109,29 +110,7 @@
       padding: 2rem;
       background-color: #1f1b24;
       font-size: 0.9rem;
-      color: #c5b3da;
-    }
-
-    @media (max-width: 1000px) {
-      .offering {
-        width: 40%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .offering {
-        width: 90%;
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .view-all-button {
-        margin-left: 0;
-        margin-top: 0.5rem;
-      }
+      color: #b3d9ff;
     }
   </style>
 </head>
@@ -148,12 +127,15 @@
   </nav>
 
   <div class="container">
+    <!-- Rituals Section -->
     <section id="rituals">
-      <div class="section-header">
+      <div class="section-heading">
         <h2 class="section-title">Rituals</h2>
-        <a href="rituals.html" class="view-all-button">View All &gt;</a>
+        <button class="view-all" onclick="window.location.href='rituals.html'">
+          View All &gt;
+        </button>
       </div>
-      <div class="offering-row">
+      <div class="offering-grid">
         <div class="offering">
           <a href="love.html">
             <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/love.jpg" alt="Love Ritual" />
@@ -176,15 +158,16 @@
         </div>
         <div class="offering">
           <a href="blockage.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/blockage.jpg" alt="Blockages Ritual" />
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/blockage.png" alt="Blockage Removal Ritual" />
           </a>
         </div>
       </div>
     </section>
 
+    <!-- Readings Section -->
     <section id="readings">
       <h2 class="section-title">Readings</h2>
-      <div class="offering-row">
+      <div class="offering-grid">
         <div class="offering">
           <a href="tarotreading.html">
             <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/tarotr.jpg" alt="Intuitive Reading" />
@@ -198,9 +181,10 @@
       </div>
     </section>
 
+    <!-- Oils Section -->
     <section id="oils">
       <h2 class="section-title">Spell Oils</h2>
-      <div class="offering-row">
+      <div class="offering-grid">
         <div class="offering">
           <a href="spell-oil.html">
             <img src="https://via.placeholder.com/300x180?text=Spell+Oil" alt="Spell Oil" />
@@ -209,9 +193,10 @@
       </div>
     </section>
 
+    <!-- Custom Section -->
     <section id="custom">
       <h2 class="section-title">Custom</h2>
-      <div class="offering-row">
+      <div class="offering-grid">
         <div class="offering">
           <a href="custom.html">
             <img src="https://via.placeholder.com/300x180?text=Custom+Ritual" alt="Custom Ritual or Bundle" />
