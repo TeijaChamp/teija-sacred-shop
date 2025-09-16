@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teija's Sacred Offerings</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Add the new font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,7 +16,6 @@
       overflow-x: hidden;
     }
 
-    /* ✨ FLOATING BACKGROUND STARS */
     .background-stars {
       position: fixed;
       top: 0;
@@ -43,7 +43,6 @@
       height: 4px;
       animation-delay: 0s;
     }
-
     .background-stars span:nth-child(2) {
       top: 30%;
       left: 80%;
@@ -51,7 +50,6 @@
       height: 2px;
       animation-delay: 5s;
     }
-
     .background-stars span:nth-child(3) {
       top: 70%;
       left: 20%;
@@ -59,7 +57,6 @@
       height: 6px;
       animation-delay: 2s;
     }
-
     .background-stars span:nth-child(4) {
       top: 50%;
       left: 50%;
@@ -67,7 +64,6 @@
       height: 3px;
       animation-delay: 8s;
     }
-
     .background-stars span:nth-child(5) {
       top: 90%;
       left: 75%;
@@ -75,7 +71,6 @@
       height: 5px;
       animation-delay: 1s;
     }
-
     .background-stars span:nth-child(6) {
       top: 40%;
       left: 15%;
@@ -83,7 +78,6 @@
       height: 7px;
       animation-delay: 3s;
     }
-
     .background-stars span:nth-child(7) {
       top: 80%;
       left: 40%;
@@ -107,8 +101,6 @@
       }
     }
 
-    /* ==== EXISTING STYLES BELOW ==== */
-
     header {
       background-color: #1f1b24;
       padding: 2rem;
@@ -116,10 +108,12 @@
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.2rem; /* bigger */
       color: #e6c66e;
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: normal; /* Bebas Neue is display so weight is built in */
     }
 
     nav {
@@ -132,9 +126,11 @@
       margin: 0 1.2rem;
       color: #d4af37;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      letter-spacing: 0.5px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-weight: normal;
+      letter-spacing: 1px;
     }
 
     .container {
@@ -153,10 +149,11 @@
     }
 
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem; /* bigger, bold */
       color: #e6c66e;
+      margin: 0;
+      text-transform: uppercase;
     }
 
     .view-all-button {
@@ -165,10 +162,13 @@
       border: 2px solid #d4af37;
       padding: 0.3rem 0.8rem;
       border-radius: 8px;
-      font-size: 0.9rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: transform 0.3s ease;
       text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      font-weight: normal;
     }
 
     .view-all-button:hover {
@@ -233,8 +233,10 @@
     .coming-soon {
       text-align: center;
       color: #d4af37;
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.8rem; /* bigger for the new font */
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      font-weight: normal;
       margin: 2.5rem 0;
     }
 
@@ -248,15 +250,8 @@
   </style>
 </head>
 <body>
-  <!-- ✨ Background Stars -->
   <div class="background-stars">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 
   <header>
@@ -315,7 +310,7 @@
             <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/protection.jpg" alt="Protection Ritual" />
           </a>
         </div>
-        <div class="offering">
+        <div there="offering">
           <a href="cutthecord.html">
             <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/cordcutting.jpg" alt="Cut the Cord Ritual" />
           </a>
