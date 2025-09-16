@@ -13,6 +13,7 @@
       color: #e6c66e;
       position: relative;
       overflow-x: hidden;
+      z-index: 1;
     }
 
     /* ✨ FLOATING BACKGROUND STARS */
@@ -22,7 +23,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 0;
       pointer-events: none;
       overflow: hidden;
     }
@@ -50,8 +51,6 @@
         opacity: 0.2;
       }
     }
-
-    /* ==== EXISTING STYLES BELOW ==== */
 
     header {
       background-color: #1f1b24;
@@ -192,7 +191,7 @@
   </style>
 </head>
 <body>
-  <!-- ✨ Background Stars -->
+  <!-- 🌌 Stars Container -->
   <div class="background-stars"></div>
 
   <header>
@@ -278,7 +277,7 @@
     <p>© 2025 Teija Champ | Spirit-led and crafted with care</p>
   </footer>
 
-  <!-- 🌟 Star Generator Script -->
+  <!-- ✨ Star Generator Script -->
   <script>
     const starContainer = document.querySelector('.background-stars');
     const starCount = 100;
