@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teija's Sacred Offerings</title>
-  <!-- Add the new font -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -16,6 +15,7 @@
       overflow-x: hidden;
     }
 
+    /* ✨ FLOATING BACKGROUND STARS */
     .background-stars {
       position: fixed;
       top: 0;
@@ -51,6 +51,8 @@
       }
     }
 
+    /* ==== EXISTING STYLES BELOW ==== */
+
     header {
       background-color: #1f1b24;
       padding: 2rem;
@@ -58,12 +60,10 @@
     }
 
     header h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.2rem;
-      color: #e6c66e;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
       margin: 0;
-      text-transform: uppercase;
-      font-weight: normal;
+      color: #e6c66e;
     }
 
     nav {
@@ -76,11 +76,9 @@
       margin: 0 1.2rem;
       color: #d4af37;
       text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      font-weight: normal;
-      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
     }
 
     .container {
@@ -99,11 +97,10 @@
     }
 
     .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.4rem;
-      color: #e6c66e;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
       margin: 0;
-      text-transform: uppercase;
+      color: #e6c66e;
     }
 
     .view-all-button {
@@ -112,13 +109,10 @@
       border: 2px solid #d4af37;
       padding: 0.3rem 0.8rem;
       border-radius: 8px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: transform 0.3s ease;
       text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      font-weight: normal;
     }
 
     .view-all-button:hover {
@@ -183,10 +177,8 @@
     .coming-soon {
       text-align: center;
       color: #d4af37;
-      font-size: 1.8rem;
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      font-weight: normal;
+      font-size: 1.5rem;
+      font-weight: 600;
       margin: 2.5rem 0;
     }
 
@@ -200,6 +192,7 @@
   </style>
 </head>
 <body>
+  <!-- ✨ Background Stars -->
   <div class="background-stars"></div>
 
   <header>
@@ -213,19 +206,84 @@
   </nav>
 
   <div class="container">
-    <!-- sections preserved as-is from user request -->
+    <section id="readings">
+      <div class="section-header">
+        <h2 class="section-title">Readings</h2>
+        <a href="readings.html" class="view-all-button">View All &gt;</a>
+      </div>
+      <div class="offering-grid">
+        <div class="offering">
+          <a href="pastlife.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/pastlife.jpg" alt="Past Life Reading" />
+          </a>
+        </div>
+        <div class="offering">
+          <a href="divineunion.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/divineunion.png" alt="Divine Union Reading" />
+          </a>
+        </div>
+        <div class="offering">
+          <a href="energycheck.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/energycheck.png" alt="Energy Check-In" />
+          </a>
+        </div>
+        <div class="offering">
+          <a href="tarotreading.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/tarotr.jpg" alt="Intuitive Reading" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="rituals">
+      <div class="section-header">
+        <h2 class="section-title">Rituals</h2>
+        <a href="rituals.html" class="view-all-button">View All &gt;</a>
+      </div>
+      <div class="offering-grid">
+        <div class="offering">
+          <a href="love.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/love.jpg" alt="Love Ritual" />
+          </a>
+        </div>
+        <div class="offering">
+          <a href="protection.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/protection.jpg" alt="Protection Ritual" />
+          </a>
+        </div>
+        <div class="offering">
+          <a href="cutthecord.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/cordcutting.jpg" alt="Cut the Cord Ritual" />
+          </a>
+        </div>
+        <div class="offering">
+          <a href="abundance.html">
+            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/abundance.jpg" alt="Abundance Ritual" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="oils">
+      <div class="section-header">
+        <h2 class="section-title">Spell Oils</h2>
+      </div>
+      <div class="coming-soon">
+        Coming soon ✨
+      </div>
+    </section>
   </div>
 
   <footer>
     <p>© 2025 Teija Champ | Spirit-led and crafted with care</p>
   </footer>
 
-  <!-- ✨ STARFIELD GENERATOR SCRIPT -->
+  <!-- 🌟 Star Generator Script -->
   <script>
     const starContainer = document.querySelector('.background-stars');
-    const numberOfStars = 100;
+    const starCount = 100;
 
-    for (let i = 0; i < numberOfStars; i++) {
+    for (let i = 0; i < starCount; i++) {
       const star = document.createElement('span');
       const size = Math.random() * 3 + 1 + 'px';
       star.style.width = size;
