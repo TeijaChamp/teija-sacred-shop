@@ -36,56 +36,6 @@
       animation: floatStar 15s linear infinite;
     }
 
-    .background-stars span:nth-child(1) {
-      top: 10%;
-      left: 5%;
-      width: 4px;
-      height: 4px;
-      animation-delay: 0s;
-    }
-    .background-stars span:nth-child(2) {
-      top: 30%;
-      left: 80%;
-      width: 2px;
-      height: 2px;
-      animation-delay: 5s;
-    }
-    .background-stars span:nth-child(3) {
-      top: 70%;
-      left: 20%;
-      width: 6px;
-      height: 6px;
-      animation-delay: 2s;
-    }
-    .background-stars span:nth-child(4) {
-      top: 50%;
-      left: 50%;
-      width: 3px;
-      height: 3px;
-      animation-delay: 8s;
-    }
-    .background-stars span:nth-child(5) {
-      top: 90%;
-      left: 75%;
-      width: 5px;
-      height: 5px;
-      animation-delay: 1s;
-    }
-    .background-stars span:nth-child(6) {
-      top: 40%;
-      left: 15%;
-      width: 7px;
-      height: 7px;
-      animation-delay: 3s;
-    }
-    .background-stars span:nth-child(7) {
-      top: 80%;
-      left: 40%;
-      width: 3px;
-      height: 3px;
-      animation-delay: 6s;
-    }
-
     @keyframes floatStar {
       0% {
         transform: translateY(0) scale(1);
@@ -250,9 +200,7 @@
   </style>
 </head>
 <body>
-  <div class="background-stars">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="background-stars"></div>
 
   <header>
     <h1>Teija's Sacred Offerings</h1>
@@ -271,5 +219,22 @@
   <footer>
     <p>© 2025 Teija Champ | Spirit-led and crafted with care</p>
   </footer>
+
+  <!-- ✨ STARFIELD GENERATOR SCRIPT -->
+  <script>
+    const starContainer = document.querySelector('.background-stars');
+    const numberOfStars = 100;
+
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement('span');
+      const size = Math.random() * 3 + 1 + 'px';
+      star.style.width = size;
+      star.style.height = size;
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 15 + 's';
+      starContainer.appendChild(star);
+    }
+  </script>
 </body>
 </html>
