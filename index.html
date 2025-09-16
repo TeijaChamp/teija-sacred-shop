@@ -4,101 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teija's Sacred Offerings</title>
-  <!-- Add the new font -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Unica One', sans-serif;
       background-color: #121212;
       color: #e6c66e;
-      position: relative;
       overflow-x: hidden;
     }
 
-    .background-stars {
+    body::before {
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: shimmer 20s linear infinite;
       z-index: -1;
-      pointer-events: none;
-      overflow: hidden;
     }
 
-    .background-stars span {
-      position: absolute;
-      display: block;
-      background: radial-gradient(circle, #ffffffcc, #ffffff00);
-      border-radius: 50%;
-      opacity: 0.2;
-      animation: floatStar 15s linear infinite;
-    }
-
-    .background-stars span:nth-child(1) {
-      top: 10%;
-      left: 5%;
-      width: 4px;
-      height: 4px;
-      animation-delay: 0s;
-    }
-    .background-stars span:nth-child(2) {
-      top: 30%;
-      left: 80%;
-      width: 2px;
-      height: 2px;
-      animation-delay: 5s;
-    }
-    .background-stars span:nth-child(3) {
-      top: 70%;
-      left: 20%;
-      width: 6px;
-      height: 6px;
-      animation-delay: 2s;
-    }
-    .background-stars span:nth-child(4) {
-      top: 50%;
-      left: 50%;
-      width: 3px;
-      height: 3px;
-      animation-delay: 8s;
-    }
-    .background-stars span:nth-child(5) {
-      top: 90%;
-      left: 75%;
-      width: 5px;
-      height: 5px;
-      animation-delay: 1s;
-    }
-    .background-stars span:nth-child(6) {
-      top: 40%;
-      left: 15%;
-      width: 7px;
-      height: 7px;
-      animation-delay: 3s;
-    }
-    .background-stars span:nth-child(7) {
-      top: 80%;
-      left: 40%;
-      width: 3px;
-      height: 3px;
-      animation-delay: 6s;
-    }
-
-    @keyframes floatStar {
+    @keyframes shimmer {
       0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.2;
-      }
-      50% {
-        transform: translateY(-20px) scale(1.2);
-        opacity: 0.5;
+        background-position: 0 0;
       }
       100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.2;
+        background-position: 1000px 1000px;
       }
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.9; }
     }
 
     header {
@@ -108,12 +65,10 @@
     }
 
     header h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.2rem; /* bigger */
-      color: #e6c66e;
+      font-size: 2.8rem;
       margin: 0;
-      text-transform: uppercase;
-      font-weight: normal; /* Bebas Neue is display so weight is built in */
+      color: #e6c66e;
+      letter-spacing: 1px;
     }
 
     nav {
@@ -126,11 +81,9 @@
       margin: 0 1.2rem;
       color: #d4af37;
       text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      font-weight: normal;
-      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
     }
 
     .container {
@@ -145,30 +98,25 @@
       align-items: center;
       border-bottom: 2px solid #d4af37;
       padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+      margin: 2rem 0 1rem;
     }
 
     .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.4rem; /* bigger, bold */
-      color: #e6c66e;
+      font-size: 2.2rem;
       margin: 0;
-      text-transform: uppercase;
+      color: #e6c66e;
+      letter-spacing: 1px;
     }
 
     .view-all-button {
       background-color: #121212;
       color: #d4af37;
       border: 2px solid #d4af37;
-      padding: 0.3rem 0.8rem;
+      padding: 0.4rem 1rem;
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
       transition: transform 0.3s ease;
-      text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      font-weight: normal;
     }
 
     .view-all-button:hover {
@@ -189,12 +137,11 @@
       width: 200px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .offering:hover {
       transform: scale(1.05);
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
     }
 
     .offering img {
@@ -206,9 +153,7 @@
       margin: 0 auto;
     }
 
-    #readings,
-    #rituals,
-    #oils {
+    #readings, #rituals, #oils {
       background-color: #1a1530;
       border-radius: 12px;
       padding: 2rem 1rem;
@@ -233,10 +178,8 @@
     .coming-soon {
       text-align: center;
       color: #d4af37;
-      font-size: 1.8rem; /* bigger for the new font */
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      font-weight: normal;
+      font-size: 1.5rem;
+      font-weight: 600;
       margin: 2.5rem 0;
     }
 
@@ -250,18 +193,15 @@
   </style>
 </head>
 <body>
-  <div class="background-stars">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
-
+  <div class="stars"></div>
   <header>
     <h1>Teija's Sacred Offerings</h1>
   </header>
 
   <nav>
-    <a href="#readings">Readings</a>
-    <a href="#rituals">Rituals</a>
-    <a href="#oils">Spell Oils</a>
+    <a href="#readings">READINGS</a>
+    <a href="#rituals">RITUALS</a>
+    <a href="#oils">SPELL OILS</a>
   </nav>
 
   <div class="container">
@@ -273,22 +213,22 @@
       <div class="offering-grid">
         <div class="offering">
           <a href="pastlife.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/pastlife.jpg" alt="Past Life Reading" />
+            <img src="pastlife.jpg" alt="Past Life Reading" />
           </a>
         </div>
         <div class="offering">
           <a href="divineunion.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/divineunion.png" alt="Divine Union Reading" />
+            <img src="divineunion.png" alt="Divine Union Reading" />
           </a>
         </div>
         <div class="offering">
           <a href="energycheck.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/energycheck.png" alt="Energy Check-In" />
+            <img src="energycheck.png" alt="Energy Check-In" />
           </a>
         </div>
         <div class="offering">
           <a href="tarotreading.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/tarotr.jpg" alt="Intuitive Reading" />
+            <img src="tarotr.jpg" alt="Intuitive Reading" />
           </a>
         </div>
       </div>
@@ -302,22 +242,22 @@
       <div class="offering-grid">
         <div class="offering">
           <a href="love.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/love.jpg" alt="Love Ritual" />
+            <img src="love.jpg" alt="Love Ritual" />
           </a>
         </div>
         <div class="offering">
           <a href="protection.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/protection.jpg" alt="Protection Ritual" />
+            <img src="protection.jpg" alt="Protection Ritual" />
           </a>
         </div>
-        <div there="offering">
+        <div class="offering">
           <a href="cutthecord.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/cordcutting.jpg" alt="Cut the Cord Ritual" />
+            <img src="cordcutting.jpg" alt="Cut the Cord Ritual" />
           </a>
         </div>
         <div class="offering">
           <a href="abundance.html">
-            <img src="https://raw.githubusercontent.com/TeijaChamp/teija-sacred-shop/main/abundance.jpg" alt="Abundance Ritual" />
+            <img src="abundance.jpg" alt="Abundance Ritual" />
           </a>
         </div>
       </div>
@@ -327,9 +267,7 @@
       <div class="section-header">
         <h2 class="section-title">Spell Oils</h2>
       </div>
-      <div class="coming-soon">
-        Coming soon ✨
-      </div>
+      <div class="coming-soon">Coming soon</div>
     </section>
   </div>
 
