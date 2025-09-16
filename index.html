@@ -11,29 +11,35 @@
       font-family: 'Raleway', sans-serif;
       background-color: #121212;
       color: #e6c66e;
-      position: relative;
       overflow-x: hidden;
+    }
+
+    header,
+    nav,
+    .container,
+    footer {
+      position: relative;
       z-index: 1;
     }
 
-    /* ✨ FLOATING BACKGROUND STARS */
-    .background-stars {
-      position: fixed;
+    /* ✨ FLOATING STARS LAYER (middle layer) */
+    .floating-stars {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 0;
       pointer-events: none;
       overflow: hidden;
+      z-index: 0;
     }
 
-    .background-stars span {
+    .floating-stars span {
       position: absolute;
       display: block;
       background: radial-gradient(circle, #ffffffcc, #ffffff00);
       border-radius: 50%;
-      opacity: 0.2;
+      opacity: 0.4;
       animation: floatStar 15s linear infinite;
     }
 
@@ -44,7 +50,7 @@
       }
       50% {
         transform: translateY(-20px) scale(1.2);
-        opacity: 0.5;
+        opacity: 0.6;
       }
       100% {
         transform: translateY(0) scale(1);
@@ -191,8 +197,7 @@
   </style>
 </head>
 <body>
-  <!-- 🌌 Stars Container -->
-  <div class="background-stars"></div>
+  <div class="floating-stars"></div>
 
   <header>
     <h1>Teija's Sacred Offerings</h1>
@@ -279,7 +284,7 @@
 
   <!-- ✨ Star Generator Script -->
   <script>
-    const starContainer = document.querySelector('.background-stars');
+    const starContainer = document.querySelector('.floating-stars');
     const starCount = 100;
 
     for (let i = 0; i < starCount; i++) {
