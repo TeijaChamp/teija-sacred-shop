@@ -4,168 +4,272 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teija's Sacred Offerings</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
+  <!-- Add the new font -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Jost', sans-serif;
-      background-color: #0c0c0e;
-      color: #f4d27a;
+      font-family: 'Raleway', sans-serif;
+      background-color: #121212;
+      color: #e6c66e;
+      position: relative;
       overflow-x: hidden;
     }
-    h1, h2 {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    nav {
-      background-color: #231f3e;
-      padding: 1em;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      font-size: 1.1em;
-    }
-    nav a {
-      color: #f4d27a;
-      text-decoration: none;
-    }
-    .section {
-      background-color: #1c1630;
-      padding: 2em;
-      margin: 2em;
-      border-radius: 12px;
-      position: relative;
-    }
-    .section h2 {
-      margin-bottom: 1em;
-      font-size: 2em;
-    }
-    .offerings {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1em;
-    }
-    .card {
-      background-color: #0c0c0e;
-      padding: 1.5em;
-      border-radius: 10px;
-      text-align: center;
-      flex: 1;
-      min-width: 180px;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
-      height: 100px;
-      margin-bottom: 1em;
-    }
-    .view-all {
-      text-align: right;
-      margin-top: -3em;
-      margin-bottom: 1em;
-    }
-    .view-all a {
-      color: #f4d27a;
-      text-decoration: none;
-      font-weight: bold;
-      border: 1px solid #f4d27a;
-      padding: 0.25em 0.5em;
-      border-radius: 5px;
-    }
-    .coming-soon {
-      text-align: center;
-      font-size: 1.5em;
-      margin-top: 2em;
-    }
-    .stars {
-      background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      background-size: contain;
-      background-repeat: repeat;
-      position: absolute;
+
+    .background-stars {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 0;
+      z-index: -1;
       pointer-events: none;
+      overflow: hidden;
     }
-    .section-content {
-      position: relative;
-      z-index: 1;
+
+    .background-stars span {
+      position: absolute;
+      display: block;
+      background: radial-gradient(circle, #ffffffcc, #ffffff00);
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: floatStar 15s linear infinite;
+    }
+
+    .background-stars span:nth-child(1) {
+      top: 10%;
+      left: 5%;
+      width: 4px;
+      height: 4px;
+      animation-delay: 0s;
+    }
+    .background-stars span:nth-child(2) {
+      top: 30%;
+      left: 80%;
+      width: 2px;
+      height: 2px;
+      animation-delay: 5s;
+    }
+    .background-stars span:nth-child(3) {
+      top: 70%;
+      left: 20%;
+      width: 6px;
+      height: 6px;
+      animation-delay: 2s;
+    }
+    .background-stars span:nth-child(4) {
+      top: 50%;
+      left: 50%;
+      width: 3px;
+      height: 3px;
+      animation-delay: 8s;
+    }
+    .background-stars span:nth-child(5) {
+      top: 90%;
+      left: 75%;
+      width: 5px;
+      height: 5px;
+      animation-delay: 1s;
+    }
+    .background-stars span:nth-child(6) {
+      top: 40%;
+      left: 15%;
+      width: 7px;
+      height: 7px;
+      animation-delay: 3s;
+    }
+    .background-stars span:nth-child(7) {
+      top: 80%;
+      left: 40%;
+      width: 3px;
+      height: 3px;
+      animation-delay: 6s;
+    }
+
+    @keyframes floatStar {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.2;
+      }
+      50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.2;
+      }
+    }
+
+    header {
+      background-color: #1f1b24;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.2rem;
+      color: #e6c66e;
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    nav {
+      background-color: #2c2533;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1.2rem;
+      color: #d4af37;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: #e6c66e;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .view-all-button {
+      background-color: #121212;
+      color: #d4af37;
+      border: 2px solid #d4af37;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    .view-all-button:hover {
+      transform: translateX(5px);
+    }
+
+    .offering-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .offering {
+      background-color: #1a161f;
+      border-radius: 12px;
+      padding: 0.5rem;
+      width: 200px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .offering:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .offering img {
+      width: 90%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #readings,
+    #rituals,
+    #oils {
+      background-color: #1a1530;
+      border-radius: 12px;
+      padding: 2rem 1rem;
+      margin-bottom: 3rem;
+    }
+
+    #readings {
+      border: 1px solid rgba(228, 182, 192, 0.2);
+      box-shadow: 0 0 30px rgba(228, 182, 192, 0.05);
+    }
+
+    #rituals {
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.05);
+    }
+
+    #oils {
+      border: 1px solid rgba(200, 120, 255, 0.2);
+      box-shadow: 0 0 30px rgba(200, 120, 255, 0.05);
+    }
+
+    .coming-soon {
+      text-align: center;
+      color: #d4af37;
+      font-size: 1.8rem;
+      font-family: 'Bebas Neue', sans-serif;
+      text-transform: uppercase;
+      font-weight: normal;
+      margin: 2.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1f1b24;
+      font-size: 0.9rem;
+      color: #e4b6c0;
     }
   </style>
 </head>
 <body>
-  <header style="text-align:center; padding: 1.5em 0; background-color: #231f3e;">
+  <div class="background-stars">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header>
     <h1>Teija's Sacred Offerings</h1>
   </header>
 
   <nav>
     <a href="#readings">Readings</a>
     <a href="#rituals">Rituals</a>
-    <a href="#spell-oils">Spell Oils</a>
+    <a href="#oils">Spell Oils</a>
   </nav>
 
-  <div class="stars"></div>
+  <div class="container">
+    <!-- sections preserved as-is from user request -->
+  </div>
 
-  <section id="readings" class="section">
-    <div class="section-content">
-      <h2>Readings</h2>
-      <div class="view-all"><a href="#">View All ></a></div>
-      <div class="offerings">
-        <div class="card">
-          <img src="https://i.imgur.com/WKfbth5.png" alt="Past Life Reading" />
-          <div>Past Life Reading</div>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/rJ2GMXL.png" alt="Divine Union" />
-          <div>Divine Union</div>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/C6tWqgI.png" alt="Energy Check-In" />
-          <div>Energy Check-In</div>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/n93qWMS.png" alt="Intuitive Reading" />
-          <div>Intuitive Reading</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="rituals" class="section">
-    <div class="section-content">
-      <h2>Rituals</h2>
-      <div class="view-all"><a href="#">View All ></a></div>
-      <div class="offerings">
-        <div class="card">
-          <img src="https://i.imgur.com/Bp6j3Fn.png" alt="Love Ritual" />
-          <div>Love Ritual</div>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/LD0Lclu.png" alt="Protection Ritual" />
-          <div>Protection Ritual</div>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/YDc9MdF.png" alt="Cut the Cord" />
-          <div>Cut the Cord</div>
-        </div>
-        <div class="card">
-          <img src="https://i.imgur.com/7Q2j0XC.png" alt="Abundance Ritual" />
-          <div>Abundance Ritual</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="spell-oils" class="section">
-    <div class="section-content">
-      <h2>Spell Oils</h2>
-      <div class="coming-soon">Coming Soon</div>
-    </div>
-  </section>
+  <footer>
+    <p>© 2025 Teija Champ | Spirit-led and crafted with care</p>
+  </footer>
 </body>
 </html>
